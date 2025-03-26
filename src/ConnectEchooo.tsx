@@ -19,6 +19,7 @@ const ConnectEchooo: React.FC = () => {
             const iframe = document.createElement('iframe');
             iframe.style.display = 'none';
             iframe.src = finalAndroidUrl;
+            console.log("iframe.src:  ", iframe.src)
             document.body.appendChild(iframe);
 
             // 设定 2 秒后检查是否仍然在当前页面
