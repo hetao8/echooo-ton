@@ -7,6 +7,8 @@ const ConnectEchooo: React.FC = () => {
         
         const baseAndroidUrl = 'echooo://echooo.valleysound.xyz/vss/ton-connect';
         const finalAndroidUrl = `${baseAndroidUrl}${queryParams}`;
+
+        console.log("finalAndroidUrl,",finalAndroidUrl)
         const baseIOSUrl = 'https://api.valleysound.xyz/vss';
         const finalIOSUrl = `${baseIOSUrl}${queryParams}`;
         const downloadUrl = 'https://play.google.com/store/apps/details?id=com.echooo.app'; // Echooo App 下载地址
