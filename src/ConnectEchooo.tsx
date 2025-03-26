@@ -14,7 +14,7 @@ const ConnectEchooo: React.FC = () => {
         const downloadUrl = 'https://play.google.com/store/apps/details?id=com.echooo.app'; // Echooo App 下载地址
 
         if (userAgent.includes('android')) {
-            // 记录当前时间
+            //
             const startTime = Date.now();
 
             // 尝试打开 App
