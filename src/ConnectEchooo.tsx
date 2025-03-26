@@ -3,24 +3,21 @@ import React from 'react';
 const ConnectEchooo: React.FC = () => {
     const handleConnect = () => {
         const userAgent = navigator.userAgent.toLowerCase();
-
-        const queryParams = window.location.search; 
+        const queryParams = window.location.search;
+        
         const baseAndroidUrl = 'echooo://echooo.valleysound.xyz/vss/ton-connect';
-        const finalAndroidUrl = `${baseAndroidUrl}${queryParams}`; 
+        const finalAndroidUrl = `${baseAndroidUrl}${queryParams}`;
 
         const baseIOSUrl = 'https://api.valleysound.xyz/vss';
-        const finalIOSUrl = `${baseIOSUrl}${queryParams}`; // 拼接参数
-        // 判断是否是 Android 设备
+        const finalIOSUrl = `${baseIOSUrl}${queryParams}`;
+
+
         if (userAgent.includes('android')) {
-            window.open(finalAndroidUrl, '_blank');
-        } 
-        
-        else if (userAgent.includes('iphone') || userAgent.includes('ipad') || userAgent.includes('ipod')) {
-            window.open(finalIOSUrl, '_blank');
-        } 
-        // 默认情况
-        else {
-            window.open(finalIOSUrl, '_blank');
+            // 直接跳转到 App Scheme
+            window.location.href = finalAndroidUrl;
+        } else {
+            // 其他设备默认跳转 Web
+            window.location.href = finalIOSUrl;
         }
     };
 
