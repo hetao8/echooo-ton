@@ -1,18 +1,16 @@
 import React from 'react';
-import './App.css'
-import {createBrowserRouter, Outlet, redirect, RouteObject, RouterProvider} from "react-router-dom";
+import './App.css';
+import { createBrowserRouter, Outlet, RouteObject, RouterProvider } from "react-router-dom";
 import zhCN from 'antd/locale/zh_CN';
-import {ConfigProvider} from "antd";
+import { ConfigProvider } from "antd";
 
 const Home = React.lazy(() => import("./pages/home"));
 
 export const baseRouterName = "faucet";
 export const routerMap: RouteObject[] = [
     {
-        index: true,
-        loader: async () => {
-            return redirect("/faucet/home");
-        },
+        index: true, // 根路径直接渲染 Home 组件，而不是重定向
+        element: <React.Suspense fallback={<>...</>}><Home /></React.Suspense>,
         errorElement: <div>404</div>,
     },
     {
@@ -37,11 +35,14 @@ export const routerMap: RouteObject[] = [
         ]
     }
 ];
+
 function App() {
     const router = createBrowserRouter(routerMap);
-    return <ConfigProvider locale={ zhCN }>
-        <RouterProvider router={ router } />
-    </ConfigProvider>
+    return (
+        <ConfigProvider locale={zhCN}>
+            <RouterProvider router={router} />
+        </ConfigProvider>
+    );
 }
 
-export default App
+export default App;
