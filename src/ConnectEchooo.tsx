@@ -37,12 +37,7 @@ const ConnectEchooo: React.FC = () => {
         }
     });
 
-    return (
-        <div>
-            <h1>连接 Echooo 钱包</h1>
-            <button onClick={() => { }}>连接到 Echooo</button>
-        </div>
-    );
+    return null
 };
 
 export default ConnectEchooo;
