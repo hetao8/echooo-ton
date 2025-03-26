@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const ConnectEchooo: React.FC = () => {
-    const handleConnect = () => {
+    useEffect(() => {
         const userAgent = navigator.userAgent.toLowerCase();
         const queryParams = window.location.search;
         
@@ -14,14 +14,13 @@ const ConnectEchooo: React.FC = () => {
         const downloadUrl = 'https://play.google.com/store/apps/details?id=com.echooo.app'; // Echooo App 下载地址
 
         if (userAgent.includes('android')) {
-            //
+            // 记录当前时间
             const startTime = Date.now();
 
             // 尝试打开 App
             const iframe = document.createElement('iframe');
             iframe.style.display = 'none';
             iframe.src = finalAndroidUrl;
-            console.log("iframe.src:  ", iframe.src)
             document.body.appendChild(iframe);
 
             // 设定 2 秒后检查是否仍然在当前页面
@@ -36,12 +35,12 @@ const ConnectEchooo: React.FC = () => {
             // iOS 和其他设备默认跳转 Web
             window.location.href = finalIOSUrl;
         }
-    };
+    });
 
     return (
         <div>
             <h1>连接 Echooo 钱包</h1>
-            <button onClick={handleConnect}>连接到 Echooo</button>
+            <button onClick={() => { }}>连接到 Echooo</button>
         </div>
     );
 };
