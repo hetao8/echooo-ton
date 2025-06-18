@@ -3,20 +3,17 @@ import React, { useEffect } from 'react';
 const ConnectEchooo: React.FC = () => {
     useEffect(() => {
         const userAgent = navigator.userAgent.toLowerCase();
-        // const queryParams = window.location.search || '';
+        const queryParams = window.location.search || '';
 
-        // const baseAndroidUrl = 'echooo://echooo.valleysound.xyz/vss/ton-connect';
-        // const finalAndroidUrl = `${baseAndroidUrl}${queryParams}`;
+        const baseAndroidUrl = 'echooo://echooo.valleysound.xyz/vss/ton-connect';
+        const finalAndroidUrl = `${baseAndroidUrl}${queryParams}`;
 
-        // const baseIOSUrl = 'https://api.valleysound.xyz/vss';
-        // const finalIOSUrl = `${baseIOSUrl}${queryParams}`;
+        const baseIOSUrl = 'https://api.valleysound.xyz/vss';
+        const finalIOSUrl = `${baseIOSUrl}${queryParams}`;
 
         const downloadUrl = 'https://www.echooo.xyz'; // Echooo App 下载地址
         const isAndroid = userAgent.includes('android');
-        // const appUrl = isAndroid ? finalAndroidUrl : finalIOSUrl;
-        const appUrl = isAndroid ? 'https://www.baidu.com/' : "https://www.deepseek.com/";
-        // const appUrl = 'https://www.baidu.com';
-        alert('检测到');
+        const appUrl = isAndroid ? finalAndroidUrl : finalIOSUrl;
 
         // 记录页面是否进入后台（用于辅助判断跳转成功）
         let hiddenTimer: NodeJS.Timeout;
