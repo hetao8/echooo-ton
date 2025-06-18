@@ -42,6 +42,7 @@ const ConnectEchooo: React.FC = () => {
                 }
             }, 1800);
         } else {
+            let starTime = Date.now();
             // iOS 设备默认跳转 Web
             window.location.href = finalIOSUrl;
             // window.open(finalIOSUrl,'_blank');
@@ -49,7 +50,7 @@ const ConnectEchooo: React.FC = () => {
             // 延迟 3 秒后关闭网页
             setTimeout(() => {
                 const endTime = Date.now();
-                if (endTime - startTime < 1800) {
+                if (endTime - starTime < 1800) {
                     alert('检测到您未安装 Echooo App，将跳转到下载页面');
                     window.location.href = downloadUrl; // 跳转至应用商店
                 } else {
