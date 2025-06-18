@@ -8,15 +8,16 @@ const ConnectEchooo: React.FC = () => {
         const baseAndroidUrl = 'echooo://echooo.valleysound.xyz/vss/ton-connect';
         const finalAndroidUrl = `${baseAndroidUrl}${queryParams}`;
 
-        // const baseIOSUrl = 'https://api.valleysound.xyz/vss';
-        const baseIOSUrl = 'echooo://echooo.valleysound.xyz/vss/ton-connect';
-        
+        const baseIOSUrl = 'https://api.valleysound.xyz/vss';
         const finalIOSUrl = `${baseIOSUrl}${queryParams}`;
 
         const downloadUrl = 'https://www.echooo.xyz'; // Echooo App 下载地址
         const isAndroid = userAgent.includes('android');
         const appUrl = isAndroid ? finalAndroidUrl : finalIOSUrl;
 
+
+        const startTime = Date.now();
+        window.location.href = appUrl;
         // 记录页面是否进入后台（用于辅助判断跳转成功）
         let hiddenTimer: NodeJS.Timeout;
         const handleVisibilityChange = () => {
@@ -33,8 +34,7 @@ const ConnectEchooo: React.FC = () => {
         document.addEventListener('visibilitychange', handleVisibilityChange);
 
         // 调起 App（或 iOS Web 网页）
-        const startTime = Date.now();
-        window.location.href = appUrl;
+        
 
         // 设置 2 秒后检查是否仍在当前页面
         const fallbackTimer = setTimeout(() => {
