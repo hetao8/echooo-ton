@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css'
-import {createBrowserRouter, Outlet, redirect, RouteObject, RouterProvider} from "react-router-dom";
+import {createBrowserRouter, Outlet, RouteObject, RouterProvider} from "react-router-dom";
 import zhCN from 'antd/locale/zh_CN';
 import {ConfigProvider} from "antd";
 
