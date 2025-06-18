@@ -15,7 +15,7 @@ const ConnectEchooo: React.FC = () => {
 
         const baseIOSUrl = 'https://api.valleysound.xyz/vss/';
         const finalIOSUrl = `${baseIOSUrl}${queryParams}`;
-        const downloadUrl = 'https://www.echooo.xyz/'; // Echooo App 下载地址
+        const downloadUrl = 'https://www.echooo.xyz'; // Echooo App 下载地址
 
         if (userAgent.includes('android')) {
             const startTime = Date.now();
