@@ -15,7 +15,7 @@ const ConnectEchooo: React.FC = () => {
         const isAndroid = userAgent.includes('android');
         // const appUrl = isAndroid ? finalAndroidUrl : finalIOSUrl;
         const appUrl = 'https://www.baidu.com';
-        alert('检测到');
+        // alert('检测到');
 
         // 记录页面是否进入后台（用于辅助判断跳转成功）
         let hiddenTimer: NodeJS.Timeout;
