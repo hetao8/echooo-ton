@@ -18,7 +18,7 @@ const ConnectEchooo: React.FC = () => {
  
             setTimeout(() => {
                 const endTime = Date.now();
-                if (endTime - startTime <= 1200) {
+                if (endTime - startTime > 1200) {
                     alert('检测到您未安装 Echooo App，将跳转到官方页面');
                     window.location.href = downloadUrl; 
                 } else {
@@ -37,7 +37,7 @@ const ConnectEchooo: React.FC = () => {
             // 延迟 3 秒后关闭网页
             setTimeout(() => {
                 const endTime = Date.now();
-                if (endTime - startTime <= 1200) {
+                if (endTime - startTime < 1200) {
                     alert('检测到您未安装 Echooo App，将跳转到官方页面');
                     window.location.href = downloadUrl; 
                 } else {
