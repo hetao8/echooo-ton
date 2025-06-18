@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 const ConnectEchooo: React.FC = () => {
     useEffect(() => {
-        // const userAgent = navigator.userAgent.toLowerCase();
+        const userAgent = navigator.userAgent.toLowerCase();
         // const queryParams = window.location.search || '';
 
         // const baseAndroidUrl = 'echooo://echooo.valleysound.xyz/vss/ton-connect';
@@ -12,9 +12,10 @@ const ConnectEchooo: React.FC = () => {
         // const finalIOSUrl = `${baseIOSUrl}${queryParams}`;
 
         const downloadUrl = 'https://www.echooo.xyz'; // Echooo App 下载地址
-        // const isAndroid = userAgent.includes('android');
+        const isAndroid = userAgent.includes('android');
         // const appUrl = isAndroid ? finalAndroidUrl : finalIOSUrl;
-        const appUrl = 'https://www.baidu.com';
+        const appUrl = isAndroid ? 'https://www.baidu.com/' : "https://www.deepseek.com/";
+        // const appUrl = 'https://www.baidu.com';
         alert('检测到');
 
         // 记录页面是否进入后台（用于辅助判断跳转成功）
