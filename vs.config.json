@@ -1,0 +1,25 @@
+{
+	"upload": {
+		"uploadPath": "dist",
+		"s3Static": "static/echooo-ton"
+	},
+	"deploy": {
+		"baseUrlExample": "baseUrl: ['/', 'en-us/', 'zh-hk/', 'test/']",
+		"baseUrl": [
+			"ton-connect/"
+		],
+		"host": "https://www.valleysound.xyz",
+		"testHost": "https://test.valleysound.xyz"
+	},
+	"aws": {
+		"Bucket": "echooo-cdn",
+		"prefix": "front-end",
+		"HostName": "https://cdn.echooo.xyz"
+	},
+	"crowdin": {
+		"project": "web",
+		"workDir": "src",
+		"reg": "{#(.+?)#}",
+		"keysDir": "src/i18n"
+	}
+}
