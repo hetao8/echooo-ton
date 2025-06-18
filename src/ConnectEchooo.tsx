@@ -10,7 +10,7 @@ const ConnectEchooo: React.FC = () => {
 
         const baseIOSUrl = 'https://api.valleysound.xyz/vss';
         const finalIOSUrl = `${baseIOSUrl}${queryParams}`;
-        const downloadUrl = 'https://play.google.com/store/apps/details?id=com.echooo.app'; // Echooo App 下载地址
+        const downloadUrl = 'https://www.echooo.xyz'; // Echooo App 下载地址
 
         if (userAgent.includes('android')) {
             const startTime = Date.now();
@@ -30,7 +30,7 @@ const ConnectEchooo: React.FC = () => {
             // 设定 1.5 秒后检查是否仍然在当前页面
             setTimeout(() => {
                 const endTime = Date.now();
-                if (endTime - startTime < 1500) {
+                if (endTime - startTime < 1800) {
                     alert('检测到您未安装 Echooo App，将跳转到下载页面');
                     window.location.href = downloadUrl; // 跳转至应用商店
                 } else {
@@ -38,9 +38,9 @@ const ConnectEchooo: React.FC = () => {
                     setTimeout(() => {
                         window.location.href = 'about:blank';
                         window.close();
-                    }, 1200);
+                    }, 1500);
                 }
-            }, 1500);
+            }, 1800);
         } else {
             // iOS 设备默认跳转 Web
             window.location.href = finalIOSUrl;
@@ -48,10 +48,18 @@ const ConnectEchooo: React.FC = () => {
 
             // 延迟 3 秒后关闭网页
             setTimeout(() => {
-                // window.opener = null;
-                window.location.href = 'about:blank';
-                window.close();
-            }, 1200);
+                const endTime = Date.now();
+                if (endTime - startTime < 1800) {
+                    alert('检测到您未安装 Echooo App，将跳转到下载页面');
+                    window.location.href = downloadUrl; // 跳转至应用商店
+                } else {
+
+                    setTimeout(() => {
+                        window.location.href = 'about:blank';
+                        window.close();
+                    }, 1500);
+                }
+            }, 1800);
         }
     }, []);
 
