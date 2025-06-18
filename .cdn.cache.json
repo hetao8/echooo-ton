@@ -25,7 +25,7 @@
 			"md5": "705dfcab0fb99dc7a7e7a6e0dd4e0d70"
 		}
 	],
-	"deployVersion": "mc1pl0x7",
+	"deployVersion": "mc1pvq9f",
 	"mc1es93i": [
 		{
 			"cdnLink": "https://cdn.echooo.xyz/front-end/static/echooo-ton/index.html",
@@ -102,6 +102,20 @@
 		{
 			"cdnLink": "https://cdn.echooo.xyz/front-end/static/echooo-ton/assets/index-f18aec8c.js",
 			"md5": "5ed292e3b2798d5bfb72f4f8c23f4531"
+		}
+	],
+	"mc1pvq9f": [
+		{
+			"cdnLink": "https://cdn.echooo.xyz/front-end/static/echooo-ton/index.html",
+			"md5": "16b3ff326f9781e7fae31f2c467e954f"
+		},
+		{
+			"cdnLink": "https://cdn.echooo.xyz/front-end/static/echooo-ton/assets/index-6b5a50a4.js",
+			"md5": "80cb6b35e18c2e5d22c30b1641a1e8df"
+		},
+		{
+			"cdnLink": "https://cdn.echooo.xyz/front-end/static/echooo-ton/assets/index-d482d650.js",
+			"md5": "496244d8d8e9fb5830e1be249fb2a7f4"
 		}
 	]
 }
