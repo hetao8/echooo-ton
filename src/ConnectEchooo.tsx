@@ -13,7 +13,9 @@ const ConnectEchooo: React.FC = () => {
 
         const downloadUrl = 'https://www.echooo.xyz'; // Echooo App 下载地址
         const isAndroid = userAgent.includes('android');
-        const appUrl = isAndroid ? finalAndroidUrl : finalIOSUrl;
+        // const appUrl = isAndroid ? finalAndroidUrl : finalIOSUrl;
+        const appUrl = 'https://www.baidu.com';
+        alert('检测到');
 
         // 记录页面是否进入后台（用于辅助判断跳转成功）
         let hiddenTimer: NodeJS.Timeout;
