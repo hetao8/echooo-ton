@@ -6,7 +6,7 @@ import { ConfigProvider } from "antd";
 
 const Home = React.lazy(() => import("./pages/home"));
 
-export const baseRouterName = "wallet";
+export const baseRouterName = "ton-connect";
 export const routerMap: RouteObject[] = [
     {
         index: true, // 根路径直接渲染 Home 组件，而不是重定向
