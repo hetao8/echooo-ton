@@ -4,15 +4,18 @@ import {isAndroid, isIos, isPc} from "@/utils";
 const ConnectEchooo: React.FC = () => {
     useEffect(() => {
         const queryParams = window.location.search;
+        const rawParams = new URLSearchParams(window.location.search);
+        rawParams.delete("ret");
         const retUrl = encodeURIComponent(window.location.origin + window.location.pathname);
-        const retParam = `ret=${retUrl}`;
+        rawParams.append("ret", retUrl);
+        const iosQueryString = `?${rawParams.toString()}`;
 
         const baseAndroidUrl = 'echooo://echooo.valleysound.xyz/vss/ton-connect';
         const finalAndroidUrl = `${baseAndroidUrl}${queryParams}`;
 
         const baseIOSUrl = 'https://api.valleysound.xyz/vss/ton-connect';
         // const finalIOSUrl = `${baseIOSUrl}${queryParams}`;
-        const finalIOSUrl = `${baseIOSUrl}${queryParams}&${retParam}`
+        const finalIOSUrl = `${baseIOSUrl}${iosQueryString}`;
         console.log("finalIOSUrl",finalIOSUrl)
         const downloadUrl = 'https://www.echooo.xyz/'; // Echooo App 下载地址
 
