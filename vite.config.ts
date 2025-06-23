@@ -16,5 +16,5 @@ export default defineConfig({
     strictPort: false,
     host: '0.0.0.0'
   },
-  base: isDev ? './' : `${config.aws.HostName}/${config.aws.prefix}/${config.upload.s3Static}`,
+  // base: isDev ? './' : `${config.aws.HostName}/${config.aws.prefix}/${config.upload.s3Static}`,
 })
